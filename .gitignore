@@ -1,0 +1,11 @@
+*.DS_Store
+
+# data
+nlp/data
+
+# firefox driver
+nlp/geckodriver*
+
+# python
+nlp/__pycache__
+
