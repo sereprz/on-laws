@@ -5,7 +5,13 @@ from scorer import Scorer
 
 scorer = Scorer()
 
-laws = pickle.load(open('data/law_objects.p', 'rb'))
+with open('data/parsed.json', 'r+') as f:
+    parsed = json.load(f)
+
+laws = dict()
+
+for name, items in parsed.items():
+    laws[name] = Law(name, items['url'], items['content'])
 
 output = []
 
@@ -22,7 +28,7 @@ for name, law in laws.items():
             d['flesh_score'] = scorer.FleschScore(text)
 
             sections.append(d)
-    output.append({name: sections})
+    output.append({'title': name, 'sections': sections})
 
 with open('data/laws.json', 'w') as f:
     json.dump(output, f)

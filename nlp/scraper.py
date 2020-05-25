@@ -10,9 +10,18 @@ from bs4 import BeautifulSoup
 
 BASEURL = 'https://www.ontario.ca'
 
+def get_first(soup):
+    '''
+        get the first law-level element
+    '''
+    levels = soup.find_all(attrs={'class': re.compile('law-level-[123]')})
+    
+    return [el for el in levels if isinstance(el, Tag) and isinstance(el.parent, Tag) and el.parent.name != 'td'][0]
+
+
 def update_levels(el, level1, level2, level3):
     '''
-        :param el: html evement
+        :param el: html element
         :param level1: string, Part number e.g. Part III Accessibility Standards
         :param level2: string, Heading e.g. Establishment Of Standards
         :param level3: string, Headnote e.g. Accessibility standards established by regulation
@@ -36,7 +45,7 @@ def get_content(soup):
     content = []
     
     try:
-        first = soup.find_all(attrs={'class': re.compile('law-level-[123]')})[0]
+        first = get_first(soup)
         counter = 0
     except IndexError:
         return content
