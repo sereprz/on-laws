@@ -7,8 +7,6 @@ function App() {
   const [title, setTitle] = useState(laws.default[0].title)
   const [sections, setSections] = useState(laws.default[0].sections)
 
-  console.log(title)
-
   useEffect(() => {
     const selectedLaw = laws.default.filter(law => {
       return law.title === title;

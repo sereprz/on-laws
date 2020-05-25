@@ -40,8 +40,43 @@ button {
 }
 
 .law {
-  margin-left: 300px;
+  margin: 0px 10px 10px 300px;
   padding: 1px 16px;
   height: 1000px;
   background-color: #f5fcff;
+}
+
+.section p {
+  padding: 10px;
+}
+/* colorbrewer: https://colorbrewer2.org/#type=sequential&scheme=Reds&n=9 */
+
+.section .q0-9 {
+  background-color: rgb(255, 247, 251, .8);
+}
+.section .q1-9 {
+  background-color: rgb(236, 226, 240, .8);
+} 
+.section .q2-9 {
+  background-color: rgb(208, 209, 230, .8);
+} 
+.section .q3-9 {
+  background-color: rgb(166, 189, 219, .8);
+} 
+.section .q4-9 {
+  background-color: rgb(103, 169, 207, .8);
+} 
+.section .q5-9 {
+  background-color: rgb(54, 144, 192, .8);
+} 
+.section .q6-9 {
+  background-color: rgb(2, 129, 138, .8);
+}
+
+.section .q7-9 {
+  background-color: rgb(1, 108, 89, .8);
+}
+
+.section .q8-9 {
+  background-color: rgb(1, 70, 54, .8);
 }
