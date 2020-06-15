@@ -8,4 +8,4 @@ nlp/geckodriver*
 
 # python
 nlp/__pycache__
-
+*.ipynb_checkpoints/
